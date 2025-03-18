@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "i"
-        IMAGE_TAG = "latest"
+        IMAGE_TAG = "v1.0"
     }
 	
 
