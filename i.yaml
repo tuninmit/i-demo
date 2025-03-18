@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: i-deployment
+  labels:
+    app: i
+spec:
+  replicas: 3  # Number of desired pods
+  selector:
+    matchLabels:
+      app: i
+  template:
+    metadata:
+      labels:
+        app: i
+    spec:
+      containers:
+        - name: i
+          image: rdrepo.vnpt-technology.vn:7890/i:v1.0  # Update with your repository and tag
+          ports:
+            - containerPort: 8080
+          env:
+            - name: JAVA_OPTS
+              value: "-Xms256m -Xmx512m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: i-service
+spec:
+  selector:
+    app: i
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP  # Change to NodePort or LoadBalancer if needed
