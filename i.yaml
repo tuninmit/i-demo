@@ -34,4 +34,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8083
-  type: ClusterIP  # Change to NodePort or LoadBalancer if needed
+  type: NodePort  # Change to NodePort or LoadBalancer if needed
