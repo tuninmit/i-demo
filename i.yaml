@@ -34,4 +34,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 6060
-  type: NodePort  # Change to NodePort or LoadBalancer if needed
+  type: LoadBalancer  # Change to NodePort or LoadBalancer if needed
