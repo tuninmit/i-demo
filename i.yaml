@@ -27,11 +27,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: i-service
+  labels:
+    app: i
 spec:
   selector:
     app: i
   ports:
     - protocol: TCP
-      port: 80
+      port: 8083
       targetPort: 8083
-  type: NodePort  # Change to NodePort or LoadBalancer if needed
+      nodePort: 30080  # Optional, specify a custom node port
+  type: NodePort
+
