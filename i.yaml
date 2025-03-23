@@ -18,7 +18,7 @@ spec:
         - name: i
           image: rdrepo.vnpt-technology.vn:7890/i:v1.0  # Update with your repository and tag
           ports:
-            - containerPort: 6060
+            - containerPort: 8083
           env:
             - name: JAVA_OPTS
               value: "-Xms256m -Xmx512m"
@@ -33,5 +33,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 6060
+      targetPort: 8083
   type: ClusterIP  # Change to NodePort or LoadBalancer if needed
