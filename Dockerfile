@@ -15,6 +15,7 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 # Copy the built JAR file from the build stage
+COPY ./opentelemetry-javaagent.jar /app/opentelemetry-javaagent.jar
 COPY --from=build /app/target/*.jar i.jar
 
 # Expose the application's port (change as needed)
