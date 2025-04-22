@@ -27,7 +27,7 @@ ENV OTEL_SERVICE_NAME=SimpleAPI
 ENV OTEL_TRACES_EXPORTER=otlp
 ENV OTEL_METRICS_EXPORTER=otlp
 ENV OTEL_LOGS_EXPORTER=otlp
-ENV OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317
+ENV OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector-cluster-opentelemetry-collector:4317
 
 # Set environment variables for Pyroscope
 ENV PYROSCOPE_APPLICATION_NAME=SimpleAPI
